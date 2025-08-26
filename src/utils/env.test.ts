@@ -32,7 +32,7 @@ describe('env', () => {
   });
 
   test('isElfHostedInstancce', () => {
-    expect(isElfHostedInstance({ host: 'someuser.elfhosted.com' } as Request)).toBeTruthy();
+    expect(isElfHostedInstance({ host: 'webstreamr.artnet.fun' } as Request)).toBeTruthy();
     expect(isElfHostedInstance({ host: 'webstreamr.hayd.uk' } as Request)).toBeFalsy();
   });
 });
