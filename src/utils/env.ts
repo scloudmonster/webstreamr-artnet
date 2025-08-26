@@ -8,4 +8,4 @@ export const envGetAppName = (): string => process.env['MANIFEST_NAME'] || 'WebS
 
 export const envIsProd = (): boolean => process.env['NODE_ENV'] === 'production';
 
-export const isElfHostedInstance = (req: Request): boolean => req.host.endsWith('elfhosted.com');
+export const isElfHostedInstance = (req: Request): boolean => req.host.endsWith('artnet.fun');
