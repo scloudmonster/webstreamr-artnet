@@ -7,10 +7,10 @@ import { ConfigureController, ManifestController, StreamController } from './con
 import { BlockedError, logErrorAndReturnNiceString } from './error';
 import { createExtractors, ExtractorRegistry } from './extractor';
 import { createSources, Source } from './source';
-import { HomeCine } from './source/HomeCine';
-import { MeineCloud } from './source/MeineCloud';
-import { MostraGuarda } from './source/MostraGuarda';
-import { XPrime } from './source/XPrime';
+import { CineHDPlus } from './CineHDPlus';
+import { Cuevana } from './Cuevana';
+import { VerHdLink } from './VerHdLink';
+import { HomeCine } from './HomeCine';
 import { contextFromRequestAndResponse, envGet, envIsProd, Fetcher, StreamResolver } from './utils';
 
 if (envIsProd()) {
@@ -98,10 +98,10 @@ addon.get('/live', async (req: Request, res: Response) => {
   const ctx = contextFromRequestAndResponse(req, res);
 
   const sources: Source[] = [
+    new CineHDPlus(fetcher),
+    new Cuevana(fetcher),
     new HomeCine(fetcher),
-    new MeineCloud(fetcher),
-    new MostraGuarda(fetcher),
-    new XPrime(fetcher),
+    new VerHdLink(fetcher),
   ];
 
   let blockedCount = 0;
