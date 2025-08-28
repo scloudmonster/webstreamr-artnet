@@ -7,10 +7,10 @@ import { ConfigureController, ManifestController, StreamController } from './con
 import { BlockedError, logErrorAndReturnNiceString } from './error';
 import { createExtractors, ExtractorRegistry } from './extractor';
 import { createSources, Source } from './source';
-import { CineHDPlus } from './CineHDPlus';
-import { Cuevana } from './Cuevana';
-import { VerHdLink } from './VerHdLink';
-import { HomeCine } from './HomeCine';
+import { CineHDPlus } from './source/CineHDPlus';
+import { Cuevana } from './source/Cuevana';
+import { VerHdLink } from './source/VerHdLink';
+import { HomeCine } from './source/HomeCine';
 import { contextFromRequestAndResponse, envGet, envIsProd, Fetcher, StreamResolver } from './utils';
 
 if (envIsProd()) {
